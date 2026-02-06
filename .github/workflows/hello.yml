@@ -1,0 +1,10 @@
+ name: Greet User
+ on: push
+ jobs:
+    greet: 
+        runs-on: ubuntu-latest
+        steps:
+            - name: greet user   ## how arrays in yml
+              run: echo "Hello World!!"
+            - name: Bye user
+              run: echo "Byee!!"
