@@ -19,19 +19,8 @@ jobs:
               #   echo "${{toJson(github)}}"
               #   git clone https://github.com/${{github.repository}}.git myfiles
               #   cd myfiles && ls
-            - name: setup node js
-              uses: actions/setup-node@v6
-              with:
-                node-version: 22
-            - name: Cache Dependencies
-              uses: actions/cache@v4
-              id: cache
-              with:
-                  path: node_modules
-                  key: ${{runner.os}}--node-${{hashFiles('**/package-lock.json')}}
-            - name: Install dependencies
-              if: steps.cache.outputs.cache-hit !='true'
-              run: npm install
+            - name: Setup Node
+              uses: ./.github/actions/setupnode
             - name: Run Tests
               run: npm run test
     build:
@@ -40,19 +29,8 @@ jobs:
         steps:
             - name: Get Code   
               uses: actions/checkout@v6
-            - name: setup node js
-              uses: actions/setup-node@v6
-              with:
-                node-version: 22
-            - name: Cache Dependencies
-              uses: actions/cache@v4
-              id: cache
-              with:
-                  path: node_modules
-                  key: ${{runner.os}}--node-${{hashFiles('**/package-lock.json')}}
-            - name: Install dependencies
-              if: steps.cache.outputs.cache-hit !='true'
-              run: npm install
+            - name: Setup Node
+              uses: ./.github/actions/setupnode
             - name: Build Project
               run: npm run build
             - name: Upload Dist Artifact
