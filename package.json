@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://Arshia-163.github.io/CI-CD-practise",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
