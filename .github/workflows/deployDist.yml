@@ -1,5 +1,13 @@
 name: Deploy Dist Folder
-on: push
+on: 
+    push:        
+      branches:
+        - main
+        - 'master/**'                    #                                       this code is run the workflow if change occurs inside code only not like read file
+      paths-ignore:
+        - README.md 
+        - '.github/workfolw/*'
+    workflow_dispatch: 
 jobs:
     test: 
         runs-on: ubuntu-latest
