@@ -4,7 +4,7 @@ function App() {
   return (
     <div>
       <h1>Github Actions</h1>
-      <h2>CI/CD Practice</h2>
+      <h2>CI/CD Practice v2</h2>
     </div>
   )
 }
