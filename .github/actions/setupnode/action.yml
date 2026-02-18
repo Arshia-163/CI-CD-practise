@@ -1,5 +1,10 @@
 name: "Setup node and install dependencies"
 description: "setup Node.js, caches dependencies and installs them"
+inputs:
+  node-version:
+    description: "Node.js version"
+    required: false
+    default: "22"
 runs: 
   using: composite
   steps:
